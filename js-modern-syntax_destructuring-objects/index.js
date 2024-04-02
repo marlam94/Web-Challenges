@@ -9,8 +9,9 @@ const company = {
   course: "Web Development",
   location: "Hamburg",
 };
-const  {course} = company;
-console.log("Neue Fisch",course);
+
+const {course} = company ;
+console.log(course);
 
 // example: export const {value1} = myObject;
 
@@ -24,9 +25,8 @@ console.log("Neue Fisch",course);
 //const user = { name: "John", years: 30 };
 
 const user = { nameu: "John", age: 30, isAdmin:false };
-console.log(nameu); 
-console.log(age);      
-console.log(isAdmin);  
+const {nameu, years:age , isAdmin = false } = user
+console.log(nameu, age, isAdmin);
 
 
 // EXERCISE 3
@@ -40,6 +40,7 @@ const dog = {
 };
 
 export const { name: dogName, breed: dogBreed, age: dogAge } = dog;
+console.log(dogName,dogAge,dogBreed);
 
 // EXERCISE 4
 // Extract the 'lastName' property from the person object as "personLastName".
@@ -51,5 +52,5 @@ const person = {
   firstName: "Alex",
 };
 
-export const { lastName: personLastName, ...allFurtherInfos } = person;
-export const moreInformation = { ...allFurtherInfos };
+export const { lastName: personLastName, ...moreInformation } = person;
+console.log(moreInformation,personLastName);
